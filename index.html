@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yazılım Geliştirici Portfolyosu | Profesyonel Çözümler</title>
+    
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="container">
+        <div class="logo">Portfolyo.</div>
+        <div><a href="#iletisim" class="btn">İletişime Geç</a></div>
+    </nav>
+
+    <header class="hero container">
+        <h1>Modern ve Ölçeklenebilir Yazılımlar Geliştiriyorum</h1>
+        <p>Dijital dünyada fikirlerinizi gerçeğe dönüştürmek için buradayım.</p>
+    </header>
+
+    <section id="yetenekler" class="container">
+        <h2>Yeteneklerim</h2>
+        <div class="grid">
+            <div class="card"><h3>Frontend</h3><p>React, Vue, TypeScript ve modern CSS mimarileri.</p></div>
+            <div class="card"><h3>Backend</h3><p>Node.js, Python, PostgreSQL ve mikro hizmetler.</p></div>
+            <div class="card"><h3>DevOps</h3><p>Docker, AWS, CI/CD süreçleri ve bulut yönetimi.</p></div>
+        </div>
+    </section>
+
+    <section id="projeler" class="container">
+        <h2>Projelerim</h2>
+        <div class="grid">
+            <div class="card"><h3>E-Ticaret Platformu</h3><p>Yüksek trafikli, güvenli ödeme sistemli bir pazar yeri projesi.</p></div>
+            <div class="card"><h3>Veri Analiz Paneli</h3><p>Gerçek zamanlı verileri görselleştiren özelleştirilebilir dashboard.</p></div>
+        </div>
+    </section>
+
+    <section id="iletisim" class="container">
+        <h2>İletişim</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label>Adınız</label>
+                <input type="text" id="name" required>
+                <div class="error" id="nameError">Lütfen adınızı giriniz.</div>
+            </div>
+            <div class="form-group">
+                <label>E-posta</label>
+                <input type="email" id="email" required>
+                <div class="error" id="emailError">Geçerli bir e-posta adresi giriniz.</div>
+            </div>
+            <div class="form-group">
+                <label>Mesajınız</label>
+                <textarea id="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Gönder</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let isValid = true;
+            
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            
+            if(name.value.length < 3) {
+                document.getElementById('nameError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('nameError').style.display = 'none';
+            }
+
+            if(!email.value.includes('@')) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('emailError').style.display = 'none';
+            }
+
+            if(isValid) {
+                alert('Mesajınız başarıyla gönderildi!');
+                form.reset();
+            }
+        });
+    </script>
+</body>
+</html>
